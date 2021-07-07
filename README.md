@@ -114,20 +114,20 @@ System.out.println(clnc1.getPaciente("5126941112") == null);
 // desde que pediatra e paciente estejam credenciados/cadastrados!
 
 // Casos felizes:
-// Barbara Liskov consultará com James Gosling em 10 de novembro de 2016
+// Barbara Liskov consultará com James Gosling em 10 de novembro de 2021
 // as 15:30
-Consulta con1 = clnc1.agendarConsulta("5543213344", 1646953, LocalDateTime.of(2016, 11, 10, 15, 30));
-// Alan Kay consultará com Margaret Hamilton em 11 de novembro de 2016
+Consulta con1 = clnc1.agendarConsulta("5543213344", 1646953, LocalDateTime.of(2021, 11, 10, 15, 30));
+// Alan Kay consultará com Margaret Hamilton em 11 de novembro de 2021
 // as 09:00
-Consulta con2 = clnc1.agendarConsulta("9351769514", 8452534, LocalDateTime.of(2016, 11, 11, 9, 0));
+Consulta con2 = clnc1.agendarConsulta("9351769514", 8452534, LocalDateTime.of(2021, 11, 11, 9, 0));
 
 // O construtor de Consulta deve ser invisível fora do modelo e a linha a seguir não deve compilar
-Consulta cons = new Consulta("9351769514", 8452534, LocalDateTime.of(2016, 11, 11, 9, 0)); // comente esta linha
+Consulta cons = new Consulta("9351769514", 8452534, LocalDateTime.of(2021, 11, 11, 9, 0)); // comente esta linha
 
 // desafio: rejeitar uma consulta quando a data/hora for anterior ao agora (now) - não vale nada
 System.out.println(con1.getPediatra().equals(pdtr1));
 System.out.println(con1.getPaciente().equals(pcnt1));
-System.out.println(con1.getDataHora().equals(LocalDateTime.of(2016, 11, 10, 15, 30)));
+System.out.println(con1.getDataHora().equals(LocalDateTime.of(2021, 05, 10, 15, 30)));
 
 // Status
 System.out.println(con1.isAgendada() == true);
@@ -153,20 +153,20 @@ System.out.println(clnc1.getConsulta(11) == clnc1.getConsulta(21)); // null == n
 // Casos tristes: retornam consulta null
 
 // paciente nao existe
-Consulta contriste = clnc1.agendarConsulta("5434441344", 1646953, LocalDateTime.of(2016, 11, 10, 15, 30));
+Consulta contriste = clnc1.agendarConsulta("5434441344", 1646953, LocalDateTime.of(2021, 11, 10, 15, 30));
 System.out.println(contriste == null);
 
 // pediatra nao existe
-contriste = clnc1.agendarConsulta("5543213344", 994422, LocalDateTime.of(2016, 11, 10, 15, 30));
+contriste = clnc1.agendarConsulta("5543213344", 994422, LocalDateTime.of(2021, 11, 10, 15, 30));
 System.out.println(contriste == null);
 
 
 // data/hora colide numa janela de 30 min (desafio, opcional, nao vale nada)
 // colide com a con1
-// Consulta colideHorario = clnc1.agendarConsulta("7231236333", 9155445, LocalDateTime.of(2016, 11, 10, 15, 35));
+// Consulta colideHorario = clnc1.agendarConsulta("7231236333", 9155445, LocalDateTime.of(2021, 11, 10, 15, 35));
 // System.out.println(colideHorario == null);
 // colide com a con1
-// colideHorario = clnc1.agendarConsulta("7231236333", 9155445, LocalDateTime.of(2016, 11, 10, 15, 5));
+// colideHorario = clnc1.agendarConsulta("7231236333", 9155445, LocalDateTime.of(2021, 11, 10, 15, 5));
 // System.out.println(colideHorario == null);
 
 // realizando uma consulta
@@ -205,7 +205,7 @@ System.out.println(primeiraConsulta.getReceita() == null);
 clnc1.cadastrarPaciente(pcnt3); // "Dennis Ritchie", "2356121222"
 clnc1.credenciarPediatra(pdtr3); // "Bjarne Stroustrup", 93253674
 
-clnc1.agendarConsulta("2356121222", 93253674, LocalDateTime.of(2016, 12, 7, 17, 15))
+clnc1.agendarConsulta("2356121222", 93253674, LocalDateTime.of(2021, 12, 7, 17, 15))
   .realizar(new Receita(new Medicacao("Paracetamol", "1 comprimido / 24h")));;
 
 System.out.println(clnc1.getConsulta(3).isRealizada() == true);
@@ -213,7 +213,7 @@ System.out.println(clnc1.getConsulta(3).getReceita() != null);
 System.out.println(clnc1.getConsulta(3).getReceita().toString().equals("Paracetamol: 1 comprimido / 24h"));
 
 // desafio (opcional, nao vale nada)
-// System.out.println(clnc1.getConsulta(3).toString().equals("Consulta de Dennis Ritchie com Bjarne Stroustrup dia 07/12/2016 as 17:15"));
+// System.out.println(clnc1.getConsulta(3).toString().equals("Consulta de Dennis Ritchie com Bjarne Stroustrup dia 07/12/2021 as 17:15"));
 ```
 
 
