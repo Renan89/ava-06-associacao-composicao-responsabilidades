@@ -124,10 +124,11 @@ Consulta con2 = clnc1.agendarConsulta("9351769514", 8452534, LocalDateTime.of(20
 // O construtor de Consulta deve ser invisível fora do modelo e a linha a seguir não deve compilar
 Consulta cons = new Consulta("9351769514", 8452534, LocalDateTime.of(2021, 11, 11, 9, 0)); // comente esta linha
 
-// desafio: rejeitar uma consulta quando a data/hora for anterior ao agora (now) - não vale nada
 System.out.println(con1.getPediatra().equals(pdtr1));
 System.out.println(con1.getPaciente().equals(pcnt1));
-System.out.println(con1.getDataHora().equals(LocalDateTime.of(2021, 05, 10, 15, 30)));
+System.out.println(con1.getDataHora().equals(LocalDateTime.of(2021, 11, 10, 15, 30)));
+
+// desafio: rejeitar uma consulta quando a data/hora for anterior ao agora (now)
 
 // Status
 System.out.println(con1.isAgendada() == true);
