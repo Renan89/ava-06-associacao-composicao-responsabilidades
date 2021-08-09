@@ -57,9 +57,9 @@ public class Clinica {
 
   }
 
-  public void cadastrarPaciente(Paciente novoPa) {
+  public void cadastrarPaciente(Paciente novoPaciente) {
     //Paciente novoPaciente = new Paciente (novoPa);
-  this.pacientes.add((Paciente) novoPa);
+  this.pacientes.add((Paciente) novoPaciente);
   }
 
 
